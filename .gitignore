@@ -1,0 +1,13 @@
+# Entornos y caches
+venv/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# Datos crudos (se descargan con src/descargar_datos.py)
+data/raw/
+
+# Temporales de Power BI
+*.pbi*.tmp
+.pbi/
