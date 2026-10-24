@@ -131,7 +131,7 @@ Detalle de la narrativa, las decisiones propuestas y las **limitaciones** en [`d
 
 ## Video explicativo
 
-_(se agrega el enlace al final del proyecto)_
+Enlace al video (13:53 min): https://youtu.be/bcuhWIGoIbQ
 
 ## Referencias
 
