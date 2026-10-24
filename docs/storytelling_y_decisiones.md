@@ -5,7 +5,7 @@
 
 ## 1. La historia en una frase
 
-> **La tienda vende más de un tercio de sus ingresos en tres meses (sep–nov: 36 % en 2010 y 41 % en 2011) y depende de pocos clientes grandes, pero deja ir a la mitad de los clientes nuevos y, sobre todo, a los que capta justo en temporada alta. El crecimiento está en retener, no en vender más a los mismos.**
+> **La tienda vende más de un tercio de sus ingresos en tres meses (sep–nov: 36 % de 2010 y 41 % de ene–nov de 2011, porque diciembre de 2011 está incompleto; 39 % si se cuenta ese diciembre parcial) y depende de pocos clientes grandes, pero deja ir a la mitad de los clientes nuevos y, sobre todo, a los que capta justo en temporada alta. El crecimiento está en retener, no en vender más a los mismos.**
 
 ## 2. Estructura narrativa (situación → complicación → pregunta → respuesta → decisión)
 
