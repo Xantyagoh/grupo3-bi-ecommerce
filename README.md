@@ -70,6 +70,65 @@ jupyter notebook                 # ejecutar los notebooks 01 a 05 en orden (Rest
 
 El dashboard se abre con **Power BI Desktop** (`dashboard/grupo3_ecommerce.pbix`); si se pide actualizar datos, apuntar la carpeta `data/processed/modelo_bi/`.
 
+## Resultados
+
+### Datos y preparación
+- **1.067.371** líneas originales → **1.021.326** después de limpiar (95,7 %). Se eliminaron duplicados exactos (34.335), códigos que no son producto (5.723), precios ≤ 0 (5.983) y 4 líneas de dos pedidos gigantes cancelados a los minutos.
+- Las **cancelaciones se conservan** como devoluciones. Las líneas **sin cliente** (22 %) se conservan para ventas y se excluyen del análisis por cliente.
+- Modelo en estrella: `fact_lineas` + `dim_fecha`, `dim_producto`, `dim_cliente`, `dim_pais`.
+
+![Filas eliminadas por regla](docs/figuras/02_limpieza_filas_por_regla.png)
+
+### KPIs
+
+| KPI | Valor |
+|---|---|
+| K1 Ingresos netos | **£18,93 M** (ventas £19,40 M − devoluciones £0,47 M) |
+| K2 Ticket promedio | **£491** por pedido (mediana £301) · 39.514 pedidos |
+| K3 Tasa de devolución | **2,4 %** del valor vendido |
+| K4 Clientes activos | **5.852** identificados |
+| K5 Recompra a 90 días | **46,7 %** |
+| K6 Concentración (20 % de clientes) | **77 %** del ingreso |
+| K7 Crecimiento interanual (ene–nov) | **+2,3 %** |
+
+![Tablero de KPIs](docs/figuras/05_tablero_kpis.png)
+
+### Hallazgos del análisis exploratorio
+- **Estacionalidad fuerte:** septiembre–noviembre = 1,2 / 1,4 / 1,8 veces el mes promedio.
+- **Concentración (80/20):** el 20 % de clientes aporta 77 % del ingreso; el 20 % de productos, 78 %; el Reino Unido, 85 %.
+- **Patrón de compra:** ~75 % de las ventas entre 10:00 y 15:59; jueves el día más fuerte; casi sin ventas los sábados.
+- **Segmentos RFM (k = 4):** *Campeones* (20 % de clientes, 74 % del ingreso), *En riesgo*, *Recientes* y *Dormidos*.
+
+![Estacionalidad](docs/figuras/03_indice_estacional.png)
+![Segmentos RFM](docs/figuras/03_rfm_segmentos.png)
+
+### Hipótesis (α = 0,05, corrección de Holm)
+
+| H | Pregunta | Decisión | Efecto |
+|---|---|---|---|
+| H1 | Ingresos semanales: temporada alta > resto | **Rechaza H0** (p ≈ 1×10⁻⁸) | **Grande** (r = 0,76) · ×1,69 |
+| H2 | Valor del pedido: Exterior ≠ Reino Unido | **Rechaza H0** | Pequeño (r = 0,27) · mediana £421 vs £295 |
+| H3 | Devoluciones: Exterior ≠ Reino Unido | **Rechaza H0** | **Trivial** (V = 0,03) |
+| H4 | Primer pedido mayor → recompra | **Rechaza H0** | Pequeño (r = 0,18) · OR = 1,44 |
+| H5 | Recompra: captados en temporada alta ≠ resto | **Rechaza H0** | Modesto: −7,6 pp (40,5 % vs 48,2 %; h de Cohen = −0,15) |
+| H6 | Recompra: Exterior ≠ Reino Unido | **No rechaza H0** (p = 0,83) | Trivial |
+
+![Resumen de hipótesis](docs/figuras/04_resumen_hipotesis.png)
+
+### Dashboard
+Power BI de 6 páginas (resumen ejecutivo, ventas y estacionalidad, clientes y retención, mercados y devoluciones, productos, hipótesis y decisiones), con segmentadores sincronizados, filtrado cruzado, tooltips y navegación. Archivo: [`dashboard/grupo3_ecommerce.pbix`](dashboard/grupo3_ecommerce.pbix) · capturas en [`dashboard/capturas/`](dashboard/capturas/) · medidas en [`dashboard/medidas_dax.md`](dashboard/medidas_dax.md).
+
+## Conclusiones
+
+1. **La estacionalidad es el factor dominante:** la temporada alta (sep–nov) vende 1,7 veces más por semana. La planeación de inventario y marketing debe empezar en agosto.
+2. **El ingreso depende de pocos clientes:** el 20 % de los clientes genera ~74–77 % del ingreso. Cuidar a los *Campeones* y reactivar a los clientes *En riesgo* es la palanca más rentable.
+3. **El crecimiento está estancado (+2,3 %) y la retención es el cuello de botella:** solo 46,7 % de los clientes recompra en 90 días, y los captados en temporada alta recompran menos (−7,6 pp).
+4. **El mercado de exportación es más valioso por pedido (+43 %) pero no más leal ni significativamente más problemático:** la diferencia en devoluciones es real pero trivial.
+5. **Las devoluciones no son el problema** (2,4 % del valor). Más preocupante es que el 22 % de las líneas no tiene cliente identificado.
+6. **Significancia no es relevancia:** con 40.000 pedidos casi todo es significativo; por eso las decisiones se basan en el tamaño del efecto (H1 grande; H3 trivial).
+
+Detalle de la narrativa, las decisiones propuestas y las **limitaciones** en [`docs/storytelling_y_decisiones.md`](docs/storytelling_y_decisiones.md).
+
 ## Video explicativo
 
 _(se agrega el enlace al final del proyecto)_
