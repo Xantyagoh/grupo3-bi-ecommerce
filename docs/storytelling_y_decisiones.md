@@ -5,7 +5,7 @@
 
 ## 1. La historia en una frase
 
-> **La tienda gana casi todo su dinero en tres meses (sep–nov) y de pocos clientes grandes, pero deja ir a la mitad de los clientes nuevos y, sobre todo, a los que capta justo en temporada alta. El crecimiento está en retener, no en vender más a los mismos.**
+> **La tienda vende más de un tercio de sus ingresos en tres meses (sep–nov: 36 % en 2010 y 41 % en 2011) y depende de pocos clientes grandes, pero deja ir a la mitad de los clientes nuevos y, sobre todo, a los que capta justo en temporada alta. El crecimiento está en retener, no en vender más a los mismos.**
 
 ## 2. Estructura narrativa (situación → complicación → pregunta → respuesta → decisión)
 
@@ -26,7 +26,7 @@
 | # | Decisión | Evidencia | KPI para monitorearla | Riesgo / cautela |
 |---|---|---|---|---|
 | **D1** | **Adelantar inventario y marketing a agosto–septiembre** y no dejar que se agote el stock en octubre–noviembre | H1 (efecto grande, r = 0,76); índice estacional nov = 1,82 | K1 ingresos netos de sep–nov | Solo dos temporadas observadas |
-| **D2** | **Campaña de retención en diciembre–enero** dirigida a los clientes captados en sep–nov (meses de baja demanda: índice 0,66–0,76) | H5: −7,6 pp de recompra; cohortes sep–nov 2010 ≈ 8–14 % | K5 recompra a 90 días de la cohorte de temporada alta | El efecto es modesto (h = −0,15); probar con un grupo de control antes de escalar |
+| **D2** | **Campaña de retención en diciembre–enero** dirigida a los clientes captados en sep–nov (inmediatamente después de la captación; los meses más flojos son enero y febrero, con índice 0,76 y 0,66, mientras diciembre queda en el promedio) | H5: −7,6 pp de recompra; cohortes sep–nov 2010 ≈ 8–14 % | K5 recompra a 90 días de la cohorte de temporada alta | El efecto es pequeño (h = −0,15); probar con un grupo de control antes de escalar |
 | **D3** | **Programa de cuenta clave para los *Campeones*** (≈ 1.190 clientes, 74 % del ingreso) y **reactivación de los clientes *En riesgo*** (1.446 clientes, 16,5 % del ingreso, 185 días sin comprar) | Segmentación RFM; K6 | Ingreso de Campeones; clientes En riesgo reactivados | La segmentación depende de la elección de k = 4 |
 | **D4** | **Estrategia comercial propia para exportación** (pedidos mínimos/escalas de precio para clientes del Exterior), sin crear un programa de retención aparte | H2 (+43 % en el pedido mediano); H6 (misma recompra) | K2 ticket por mercado | El Exterior es el 15 % de las ventas |
 | **D5** | **Mejorar la captura del `Customer ID` en el checkout**: el 22 % de las líneas (13 % del ingreso) no se puede seguir en el tiempo | Auditoría de calidad | % de líneas con cliente identificado | Requiere cambio en el sistema de ventas |
