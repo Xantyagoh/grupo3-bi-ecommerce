@@ -110,7 +110,7 @@ El dashboard se abre con **Power BI Desktop** (`dashboard/grupo3_ecommerce.pbix`
 | H2 | Valor del pedido: Exterior ≠ Reino Unido | **Rechaza H0** | Pequeño (r = 0,27) · mediana £421 vs £295 |
 | H3 | Devoluciones: Exterior ≠ Reino Unido | **Rechaza H0** | **Trivial** (V = 0,03) |
 | H4 | Primer pedido mayor → recompra | **Rechaza H0** | Pequeño (r = 0,18) · OR = 1,44 |
-| H5 | Recompra: captados en temporada alta ≠ resto | **Rechaza H0** | Modesto: −7,6 pp (40,5 % vs 48,2 %; h de Cohen = −0,15) |
+| H5 | Recompra: captados en temporada alta ≠ resto | **Rechaza H0** | Pequeño: −7,6 pp (40,5 % vs 48,2 %; h de Cohen = −0,15, bajo el umbral de 0,2 pero relevante en puntos de recompra) |
 | H6 | Recompra: Exterior ≠ Reino Unido | **No rechaza H0** (p = 0,83) | Trivial |
 
 ![Resumen de hipótesis](docs/figuras/04_resumen_hipotesis.png)
