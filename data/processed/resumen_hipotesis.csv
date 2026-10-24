@@ -1,0 +1,7 @@
+hipotesis,prueba,p_valor,efecto,medida_efecto,p_holm,decision (alpha=0.05),magnitud del efecto
+H1,Mann-Whitney (unilateral),4.218304135619294e-09,0.7610256410256411,r biserial,1.2654912406857882e-08,Rechaza H0,grande
+H2,Mann-Whitney (bilateral),8.658598292790238e-145,0.2678156774843041,r biserial,5.195158975674143e-144,Rechaza H0,pequeno
+H3,Chi-cuadrado,2.6702843752981606e-12,0.03228940866948859,V de Cramer,1.0681137501192642e-11,Rechaza H0,trivial
+H4,Mann-Whitney (unilateral),9.160679190457653e-30,0.17990930245306802,r biserial,4.5803395952288265e-29,Rechaza H0,pequeno
+H5,Chi-cuadrado,2.0113609943623287e-05,-0.15355984141918388,h de Cohen,4.0227219887246574e-05,Rechaza H0,trivial
+H6,Chi-cuadrado,0.8343145382696829,-0.012646126991211704,h de Cohen,0.8343145382696829,No rechaza H0,trivial
